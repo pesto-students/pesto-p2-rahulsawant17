@@ -1,0 +1,59 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    padding-top: 200px;
+}
+
+.one {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: red;
+    animation: spin 1s infinite;
+    animation-direction: alternate;
+}
+
+.two {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: yellow;
+    animation: spinr 1s infinite;
+    animation-direction: alternate;
+}
+
+.three {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: blue;
+    animation: spinr 1s infinite;
+    animation-direction: alternate;
+}
+
+.four {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: green;
+    animation: spin 1s infinite;
+    animation-direction: alternate;
+}
+.cntr-txt {
+    text-align: center;
+    width: 210px;
+    margin-top: 80px;
+    font-size: 40px;
+    position: absolute;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes spinr {
+    100% {
+        transform: rotate(-90deg);
+    }
+}
