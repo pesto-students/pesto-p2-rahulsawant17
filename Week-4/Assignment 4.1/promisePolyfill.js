@@ -51,4 +51,14 @@ let p = new custPromise((resolve, reject) => {
         resolve(`The promise is resolved with value ${n}`) }
 
 })
+let p2 = new custPromise((resolve, reject) => {
+    let n=getNumber()
+
+    if (n % 5 == 0) {
+        reject(`The promise is rejected with value ${n}`)
+    } else {
+        resolve(`The promise is resolved with value ${n}`) }
+
+})
 p.then((data)=>{console.log(data)}).catch((data)=>{console.error(data)})
+p2.then((data)=>{console.log(data)}).catch((data)=>{console.error(data)})
