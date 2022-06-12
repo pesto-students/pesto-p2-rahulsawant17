@@ -11,25 +11,22 @@ function custPromise(executor){
 
     let state=pending
     let value=null
-    let handlers=[]
-    let catchers=[]
+
     function resolve(result){
         if (state!==pending)return;
         state=fulfilled
         value=result
-        handlers.forEach((h)=>h(value))
+
     }
     function reject(err){
         if (state!==pending)return;
         state=rejected
         value=err
-        catchers.forEach((c)=>c(value))
+
     }
     this.then=function(success){
         if(state===fulfilled){
             success(value)
-        }else{
-            handlers.push(success)
         }
         return this
     }
@@ -37,9 +34,7 @@ function custPromise(executor){
         if(state===rejected){
             failure(value)
         }
-        else{
-            catchers.push(failure)
-        }
+
         return this
     }
 executor(resolve,reject)
