@@ -1,0 +1,114 @@
+
+* {
+  box-sizing: border-box;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+    font-size:large;
+}
+
+
+
+body {
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 20 px 0;
+  color: #fff;
+  font-size: xx-large;
+}
+
+.top {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: x-large;
+  color: white;
+  padding: 20px;
+}
+
+
+.comp{
+background: rgb(72, 233, 32);
+}
+button {
+  margin: 10px;
+  padding: 6px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
+input {
+  height: 50px;
+  width: 400px;
+}
+
+
+.tasks {
+  justify-content: right;
+  color: #fff;
+  background: linear-gradient(90deg,
+      rgb(72, 172, 147) 0%,
+      rgb(117, 247, 247) 100%);
+
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 20px;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
