@@ -115,3 +115,15 @@ display: inherit;
 .contact{
   margin-left: 10px;
 }
+
+.contact-us {
+  color: rgb(0, 0, 0);
+  background: white;
+  padding: 10px;
+ border: solid ;
+  display: grid;
+  width: 40%;
+  height: 200px;
+  margin: 100px 370px;
+  justify-items: center;
+}

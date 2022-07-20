@@ -3,8 +3,8 @@ import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Tab from "./components/Tab";
 import Spin from "./components/Spinner";
-
-function HelloWorld() {
+import Nav from "./components/Nav";
+function Home() {
   let start = "https://api.shrtco.de/v2/shorten?url="
   let [shortUrl, setShortUrl] = useState("")
   let [longUrl, setLongUrl] = useState("")
@@ -63,11 +63,7 @@ function HelloWorld() {
     document.getElementById("longurl").value = '';
   }
   return (<>
-  <div className="nav"> <div className="home">Home</div><div className="contact" href="/contactus" >Contact Us</div>
-
-  <a className="home" href="/home/" onclick="">Home</a>
-  <a className="contact" href="/contact-us/" onclick="">Contact Us</a>
-   </div>
+  <Nav/>
     <div className="outer">
 
       <div className="main">
@@ -100,4 +96,4 @@ function HelloWorld() {
 
   );
 }
-export { HelloWorld };
+export { Home };
