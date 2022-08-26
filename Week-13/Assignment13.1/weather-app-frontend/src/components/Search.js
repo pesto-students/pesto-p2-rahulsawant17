@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState, useEffect } from "react";
 import "../index.css";
 import { WeatherComponent } from "./WeatherComponent";
 import Nav from "./Nav";
@@ -11,9 +11,13 @@ export function Search() {
   let changeHandler = (event) => {
     setCity(event.target.value);
   };
+  useEffect(() => {
+    setPage(page);
+    search();
+  }, [page]);
   let search = () => {
     let url = `http://127.0.0.1:3001/current?city=${city}&page=${page}&limit=${limit}`;
-    console.log(url);
+
     async function fetchwether() {
       const res = await fetch(url);
       const data = await res.json();
@@ -23,22 +27,18 @@ export function Search() {
     fetchwether();
   };
 
-  let prev = () => {
+  const prev = () => {
     if (page > 1) {
       setPage(page - 1);
-    console.log(page)
-
-      search();
     }
   };
-  let next = () => {
-setPage(page+1)
-    console.log(page)
-    search();
+  const next = () => {
+    setPage(page + 1);
   };
 
   return (
-    <><Nav/>
+    <>
+      <Nav />
 
       <h1>Weather App</h1>
       <div className="top">
@@ -88,9 +88,7 @@ setPage(page+1)
         <button className="btn" onClick={prev}>
           Previous
         </button>
-        <button className="btn" onClick={()=>{
-          setPage(page + 1);
-          next()}}>
+        <button className="btn" onClick={next}>
           Next
         </button>
       </div>
